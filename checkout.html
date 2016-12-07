@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<?php 
+session_start();
+if (!isset($_SESSION['email']))
+	header('location: login.php');
+?>
+
+<html>
+	<head>
+	<title>MobiKart | Thank You</title>
+	
+	</head>
+	<style type="text/css">
+	 body {
+    background-image: url("images/back2.jpg");
+    background-size: 120% 120%;
+    background-repeat: no-repeat;
+}
+</style>
+<body>
+	<form action="success.php" method="POST">
+		
+			<center>
+			<div style="background-color: #ffffff; width: 850px;font-family: copperplate gothic light;">
+				<!-- Code for Header-->
+				<div style="width: 840px;">
+					<div style="float: left;margin: 20px 0 0 20px;">
+							<a href="index.php"><img src="images/logo.jpg" class="img-rounded" alt="logo" width="100" height="100"><h1 style="color:green; float:right">MobiKart</h1></a>
+					</div>
+					
+					<div style="width:80px; float: right; height: 25px; margin: 40px 35px 30px 0px; padding-top:5px; background-color: green;border-radius: 5px;">
+					<a href="logout-script.php" style="color: #ffffff; font-size: 1em; text-decoration: none;">Logout!</a>
+				</div>
+				<div style="width:80px; float: right; height: 25px; margin: 80px -80px 30px 0px; padding-top:5px; background-color:green;border-radius: 5px;">
+					<a href="settings.php" style="color: #ffffff; font-size: 1em; text-decoration: none;">Settings!</a>
+				</div>
+				</div>
+				<hr size="2" color="green" width="95%" style="clear: both;">
+				<br>
+				<br><font size="5em;">YOUR ORDER</font><hr width="20%" style="margin-top: 0px;"size="2" color="green" style="clear: both;">
+				<div style="min-height: 100px;">
+					<p style="font-family:candara;font-size: 1em;">Please confirm that you wish to order the following items.</p>
+					<table border="0" style="font-family:georgia;">
+						<tr>
+							<td style="font-size: 15px;border-right: 1pt solid #cccccc;border-bottom : 1pt solid #cccccc;padding: 5px;"><b>Item Number</b></td>
+							<td style="padding: 5px;border-bottom: 1pt solid #cccccc;text-align:right;"><b>Cost</b></td>
+						</tr>
+						<?php
+						if (!empty($_GET['mobile']))
+							{
+							$ordered = $_GET['mobile'];
+							$totalprice = 0;
+							$price = 0;
+							$message = "Mobile ID : ";
+							if (empty($ordered))
+								header('location: shop.php');
+							else							
+								{
+									for ($i=0; $i<count($ordered); $i++)
+										{
+										$id = $ordered[$i];
+										$message = $message.$id." ";
+										$con = mysqli_connect('localhost', 'root', '');
+										$db = mysqli_select_db($con,'test');
+										$query = "SELECT Price, PID FROM mobiles WHERE PID='$id'";
+										$result = mysqli_query($con,$query);
+										$row = mysqli_fetch_array($result);
+										$price = ($row['Price']);
+										$totalprice += $price;
+
+										echo "<tr>";
+										echo "<td style=\"font-size: 15px;border-right: 1pt solid #cccccc;padding: 5px; \">#$id</td>";
+										echo "<td style=\"padding: 5px; text-align:right;\">Rs $price</td>";
+										echo "<tr>";
+										}
+									echo "<tr>";
+									echo "<td style=\"font-size: 15px;border-right: 1pt solid #cccccc;padding: 5px; border-top: 1pt solid #cccccc;\">Total</td>";
+									echo "<td style=\"padding: 5px;text-align:right;border-top: 1pt solid #cccccc;\">Rs $totalprice</td>";
+								}
+							}
+						else
+							header('location: shop.php');
+						?>				
+						
+						
+					</table>
+					<input type="hidden" name="flowerid" value="<?php echo $message; ?>">
+					<input type="submit" name="submit" value = "Confirm!" style=" background:green;border:none; color:white; font-family:georgia; font-size:18px; height: 30px; width: 100px; position: relative;top: 20px; left: 20px;border-radius:5px; ">
+				</div>
+				<br><br>
+				<hr size="2" color="c0c0c0" width="95%" style="clear: both;">
+				<br>
+			</div>
+		</body>
+	</form>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<?php 
+session_start();
+if (!isset($_SESSION['email']))
+  header('location: login.php');
+
+?>
+<html lang="en">
+<head>
+  <title>Mobikart | ShopPage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+   <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    
+    .center {
+   text-align: center;
+}
+
+ body {
+    background-image: url("images/back2.jpg");
+    background-size: 110% 110%;
+    background-repeat: no-repeat;
+}
+
+    </style>
+   
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="about.html"><img src="images/logo.jpg" class="img-rounded" alt="logo" width="40" height="40"></a></li>
+        <li class="active"><a href="home.php">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.php">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Welcome</a></li>
+        <li><a href="logout-script.php" ><span class="glyphicon glyphicon-log-out">Logout!</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br/><br/><br/>
+<div class="center"><img class="default" src="images/topimg.jpg" alt="mobile" style="width:1200px; height:450px;"></div>
+<br/><br/><br/>
+<h2 style="font-family:'Apple Chancery'; color: indigo; font-style: italic;">Check out our wide range of mobile phones at attractive prices.....</h2>
+<br/><br/><br/>
+
+<form action="checkout.php" method="GET">
+
+<div class="row">
+  <div class="col-sm-4">      
+      <div class="panel panel-primary">
+      <div class="panel-heading" style="text-align: center">iPhone 6</div>
+        <div class="panel-body" style="text-align: center"><a href="iphone.html"><img src="images/iphone6.png" alt="iphone 6" align="middle" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="1"/>     Rs. 53,999<br/>8 MP Primary Camera<br/>iOS 9<br/>4.7 inch Touchscreen<br/>6.9 mm Thickness</div>
+      </div>    
+  </div>
+
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">Samsung Galaxy J7</div> 
+        <div class="panel-body" style="text-align: center"><a href="sam.html"><img src="images/samsungj7.jpg" alt="samsungj7" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="2"/>     Rs. 14,249<br/>5.5 Inch Display<br/>Dual SIM (LTE + GSM)<br/>13 MP |5 MP Camera<br/>Octa Core Processor</div>
+      </div>
+  </div>
+
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">Micromax Canvas Xpress 2</div>  
+        <div class="panel-body" style="text-align: center"><a href="mooc.html"><img src="images/micromaxcanvas.jpg" alt="micromaxcanvas" style="width:150px;height:300px"></a></div> 
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="3"/>   Rs. 6,999<br/>Android v5.0.1 OS<br/>13 MP Primary Camera<br/>2 MP Secondary Camera<br/>Dual Sim (GSM + WCDMA)</div>
+      </div> 
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">Asus Zenphone 5</div> 
+        <div class="panel-body" style="text-align: center"><a href="asus.html"><img src="images/asuszenphone5.jpg" alt="asuszenphone5" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="4"/>     Rs. 8,999<br/>2 GB RAM, 8 GB ROM<br/>5 inch HD Display<br/>8 MP Primary Camera<br/>Upgrade to v4.4 OS</div>
+      </div>    
+  </div>
+
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">HTC One M9</div> 
+        <div class="panel-body" style="text-align: center"><a href="htc.html"><img src="images/htconem9.jpg" alt="htconem9" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="5"/>     Rs. 35,999<br/>Android (Lollipop) OS<br/>Dual Primary Camera<br/>4MP Secondary Camera<br/>5.2 inch Touchscreen</div>
+      </div>
+  </div>
+
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">Microsoft Lumia 950 XL</div>
+        <div class="panel-body" style="text-align: center"><a href="lumia.html"><img src="images/lumia950.png" alt="lumia950" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="6"/>     Rs. 46,999<br/>Windows Phone v10 OS<br/>5.7 inch Touchscreen<br/>20 MP Primary Camera<br/>5 MP Secondary Camera</div>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">Moto X Play</div> 
+        <div class="panel-body" style="text-align: center"><a href="moto.html"><img src="images/motox.jpg" alt="motox" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="7"/>     Rs. 18,499<br/>3630 mAh Battery<br/>Camera: 21 MP | 5 MP<br/>Octa-core Processor<br/>5.5 inch FHD Screen</div>
+      </div>    
+  </div>
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">Xiami Mi 4i</div> 
+        <div class="panel-body" style="text-align: center"><a href="mi.html"><img src="images/mi4i.jpg" alt="mi4i" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="8"/>     Rs. 11,999<br/>2nd-gen Snapdragon 615<br/>13MP Primary Camera<br/>4.4V 3030 mAh Battery<br/>5 inch Full HD Display</div>
+       </div>
+  </div>
+  <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center">Sony Xperia Z1</div>
+        <div class="panel-body" style="text-align: center"><a href="sony.html"><img src="images/sonyxperiaz1.png" alt="sonyxperiaz1" style="width:150px;height:300px"></a></div>
+        <div class="panel-footer" style="text-align: center"><input type="checkbox" name= "mobile[]" value="7"/>     Rs. 24,999<br/>5 inch Touchscreen<br/>13 MP Primary Camera<br/>Android v4.1 OS<br/>Upgradable to v4.4 OS</div>
+      </div>
+  </div>
+</div>
+<input type="submit" name="buynow" value="Buy Now!" style="position:absolute; left:550px; top:2270px; background:#CC0099;border:none; color:white; font-family:georgia; font-size:24px; height: 75px; width: 200px; align:middle; border-radius:5px; ">
+</form>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<?php 
+session_start();
+if (isset($_SESSION['email']))
+  header('location: shop.php');
+?>
+<html lang="en">
+<head>
+  <title>MobiKart | Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    .carousel-inner img {
+      width: 60%; 
+      margin: auto;
+      min-height:200px;
+  }
+
+  .black{ color:lime;
+  	font-style: strong;
+  	font-size: 2em;
+  	font-family: 'Comic Sans MS', cursive;
+
+  }
+
+  body {
+    background-image: url("images/1.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+footer {
+      padding: 25px;
+    }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="about.html"><img src="images/logo.jpg" class="img-rounded" alt="logo" width="30" height="30"></a></li>
+        <li class="active"><a href="home.php">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.php">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon glyphicon-user"></span>Sign Up/Log In</a></li>
+       <!--<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/latest-mobiles.jpg" alt="Image">
+        <div class="carousel-caption">
+          <h3 class="black">Latest Mobiles</h3>
+          <p class="black">Buy Now!!</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="images/Mobiles.jpg" alt="Image">
+        <div class="carousel-caption">
+          <h3 class="black">Latest Mobiles</h3>
+          <p class="black">Selling fast!!</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="images/mobiles2.png" alt="Image">
+        <div class="carousel-caption">
+          <h3 class="black">Latest Mobiles</h3>
+          <p class="black">Avail <b>BIG</b> discounts!!</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container text-center"> 
+	<h2> New & Upcoming </h2><br/><br/><br/>
+
+	<div class="row">
+    <div class="col-sm-4">
+      <a href="htc.html">
+      <img src="images/mob1.jpg" class="img-responsive" style="width:80%" alt="Image">
+      <p style="font-style:bold; color:navy; font-size:30px;">HTC</p></a>
+    </div>
+    <div class="col-sm-4"> 
+      <a href="iphone.html">
+      <img src="images/mob2.jpg" class="img-responsive" style="width:80%" alt="Image">
+      <p style="font-style:bold; color:navy; font-size:30px;">Apple</p></a>   
+    </div>
+    <div class="col-sm-4">
+     <br/><br/>
+     <a href="shop.php" class="btn btn-info" role="button" 
+     style="background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 36px;">Begin Shopping</a><br/><br/><br/>
+
+  </div>
+
+</div>
+</div><br/><br/><br/>
+
+<footer class="container-fluid">
+  <h4>Online shopping India
+<br/>
+Forget crowded malls, endless maze-like parking lots and long lines. From clothes to mobiles phones, you can buy just about anything online. And when we say say online, we mean Mobikart.com, one of India's best online shopping destinations.
+<br/>
+Shopping on Mobikart.com
+What is it like to shop on Mobikart you ask? Well, let's make it simple for you. Say you need to buy a new phone. All you need to do in log into Mobikart.com and browse through the countless options available for you. Awesome, right? No more trips to the mall. No more getting stuck in endless traffic. With Mobikart, you can replace *honk* *honk* with *click* *click*. It's that easy.
+<br/>
+Enjoy delightful prices
+For 'Every Wish Fulfilled' to happen, we at Mobikart understand that prices can put you off. And that is why we have round-the-clock discounts and amazing prices for you to enjoy. With options like Deals-of-the-Day, find products at unbelievably low prices.
+<br/>
+Still apprehensive about paying online, we got you covered with our ever-popular cash-on-delivery option. And with fast delivery options, you'll have your product in your hand in no time. Apart from all that, should you be unhappy with your order, we have got excellent exchange and replacement policies that will surely change your frown into a big smile.</p>
+
+</footer>
+
+	</body>
+</html>
